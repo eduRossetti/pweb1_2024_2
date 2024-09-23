@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex Pratico 01</title>
+</head>
+<body>
+    <form onsubmit="exibirValores()">
+        <fieldset>
+            <legend>Exercicío pratico 01</legend>
+            <label for="firstName"></label>
+            <input type="text" name="firstName" placeholder="Primeiro Nome" id="firstName">
+
+            <br><br>
+
+            <label for="secondName"></label>
+            <input type="text" name="secondName" placeholder="Segundo Nome" id="secondName">
+
+            <br><br>
+            
+            <legend>Curso</legend>
+            <input type="radio" name="Curso" id="tecInfo">
+            <label for="radio">Tecnico em Informatica</label>
+            <br>
+            <input type="radio" name="Curso" id="ADS">
+            <label for="radio">ADS</label>
+            <br>
+            <input type="radio" name="Curso" id="pWeb">
+            <label for="radio">Pweb</label>
+
+            <br><br>
+
+            <legend>Linguagem da sua preferencia</legend>
+            <br>
+            <input type="checkbox" name="java" id="linguagem">
+            <label for="checkbox">Java</label>
+            <br>
+            <input type="checkbox" name="JS" id="linguagem">
+            <label for="checkbox">JS</label>
+            <br>
+            <input type="checkbox" name="python" id="linguagem">
+            <label for="checkbox">Python</label>
+
+            <br><br>
+            
+            <legend for="input1">Escolha o cidade mais proxima: </legend>
+            <input list="datalist1" placeholder="Escolha o mais proximo" id="input1">
+            <datalist id="datalist1">
+                <option value="chapecó"></option>
+                <option value="joinville"></option>
+                <option value="concordia"></option>
+                <option value="florianopolis"></option>
+                <option value="são josé"></option>
+            </datalist>
+        </fieldset>
+        <input type="submit" value="enviar">
+    </form>
+    <script>
+        function exibirValores(){
+
+        var pNome = document.getElementById("firstName").value;
+        var sNome = document.getElementById("secondName").value;
+        var curso = document.getElementById("tecInfo").checked ? 'Técnico em Informática' :
+                    document.getElementById("ADS").checked ? 'ADS' :
+                    document.getElementById("pWeb").checked ? 'Pweb' : 'Nenhum curso selecionado';
+
+        var cidade = document.getElementById("input1").value;
+
+        window.alert(`Nome: ${pNome} ${sNome}\nCurso: ${curso}\nCidade: ${cidade}`);
+        }
+    </script>
+</body>
+</html>
